@@ -39,8 +39,8 @@
 
 <body class="text-center">
   <div class="container p-5">
-    <img class="imgLogin" src="img/login.png">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
+    <img class="imgLogin" src="img/login.png" width="600px">
+    <div style="position: relative; width:auto; top: 0;">
       <div class="login">
         <div class="form">
           <form action="index.html" method="get">
@@ -53,7 +53,7 @@
           <div class="checkbox">
           <!-- Este Remember Me es decorativo.-->
             <input type="checkbox" value="rememberme">
-            Remember Me 
+            Remember Me
             </div>
             <div id="buttonsubmit">
               <input type="submit" onclick="logIN()"  value="Sign In">
@@ -62,11 +62,6 @@
           </form>
 
   <script src="js/init.js"></script>
-  <script src="js/login.js"></script>
-  <script>function logIN() {
-    sessionStorage.setItem("conteo", 1)
-}
-
-  </script>
+  
 </body>
 </html>

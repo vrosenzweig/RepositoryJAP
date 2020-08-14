@@ -40,16 +40,17 @@ var getJSONData = function(url){
     });
 }
 
-var cont = sessionStorage.getItem("conteo");
+function logIn() {
+  localStorage.setItem("log", true)
+} 
 
-
-function forzarLogin() {
-  if (cont !=1) { 
-  sessionStorage.setItem("conteo", 3);
-
- location.href="login.html"
-
-   }
+function forzarlogIn() {
+  var logueo = localStorage.getItem("log");
+  
+  if (!logueo) { 
+      localStorage.setItem("log", false);
+      location.href="logIn.html";
+  }
 }
 
 
@@ -57,5 +58,5 @@ function forzarLogin() {
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-
+  forzarlogIn();
 });
