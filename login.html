@@ -39,15 +39,34 @@
 
 <body class="text-center">
   <div class="container p-5">
+    <img class="imgLogin" src="img/login.png">
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 16/08/2020) -> Punto 3 y 4.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>
+      <div class="login">
+        <div class="form">
+          <form action="index.html" method="get">
+            <label for="inputMail">E-mail</label>
+            <input type="email" id="inputMail" placeholder="Enter e-mail address" required>
+            <br>
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="********" minlength="8" maxlength="10" required>
+          </div>
+          <div class="checkbox">
+          <!-- Este Remember Me es decorativo.-->
+            <input type="checkbox" value="rememberme">
+            Remember Me 
+            </div>
+            <div id="buttonsubmit">
+              <input type="submit" onclick="logIN()"  value="Sign In">
+            </div>
+            <hr>
+          </form>
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
+  <script>function logIN() {
+    sessionStorage.setItem("conteo", 1)
+}
+
+  </script>
 </body>
 </html>
