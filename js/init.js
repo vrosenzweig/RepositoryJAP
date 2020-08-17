@@ -41,14 +41,14 @@ var getJSONData = function(url){
 }
 
 function logIn() {
-  localStorage.setItem("log", true)
+  sessionStorage.setItem("log", true)
 } 
 
 function forzarlogIn() {
-  var logueo = localStorage.getItem("log");
+  var logueo = sessionStorage.getItem("log");
   
   if (!logueo) { 
-      localStorage.setItem("log", false);
+      sessionStorage.setItem("log", false);
       location.href="login.html";
   }
 }
