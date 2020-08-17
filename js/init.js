@@ -49,7 +49,7 @@ function forzarlogIn() {
   
   if (!logueo) { 
       localStorage.setItem("log", false);
-      location.href="logIn.html";
+      location.href="login.html";
   }
 }
 
