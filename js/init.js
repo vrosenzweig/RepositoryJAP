@@ -40,19 +40,30 @@ var getJSONData = function(url){
     });
 }
 
-function logIn() {
+function logIN() {
   sessionStorage.setItem("log", true)
+  var user = document.getElementById("inputMail");
+  sessionStorage.setItem("email", user.value);
 } 
 
 function forzarlogIn() {
   var logueo = sessionStorage.getItem("log");
+  var userEmail = sessionStorage.getItem("email");
   
   if (!logueo) { 
       sessionStorage.setItem("log", false);
       location.href="login.html";
   }
+  if (userEmail){
+    document.getElementById('usuarioIniciado').innerHTML = userEmail;
+  }
 }
 
+function cerrarSesion() {
+
+  sessionStorage.clear();
+  window.location.reload();
+}
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los

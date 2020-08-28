@@ -13,6 +13,7 @@ function sortProducts(criteria, array){
 
     switch(criteria) {
         case ORDER_ASC_BY_COST:
+            // Ordenar por costo ascendente
             result = productos.sort(function(a, b) {
                 if ( a.cost < b.cost ){ return -1; }
                 if ( a.cost > b.cost ){ return 1; }
@@ -21,6 +22,7 @@ function sortProducts(criteria, array){
             showProductsList(result);
             break;
         case ORDER_DESC_BY_COST:
+            // Ordenar por costo descendente
             result = productos.sort(function(a, b) {
                 if ( a.cost > b.cost ){ return -1; }
                 if ( a.cost < b.cost ){ return 1; }
@@ -29,6 +31,7 @@ function sortProducts(criteria, array){
             showProductsList(result);
             break;
         case ORDER_DESC_BY_RELEV:
+            // Ordenar por relevancia (cantidad de vendidos)
             result = productos.sort(function(a, b) {
                 if (a.soldCount > b.soldCount) {
                     return -1;
@@ -78,13 +81,7 @@ function showProductsList(array){
 
 
 function sortAndShowProducts(sortCriteria, productsArray){
-    currentSortCriteria = sortCriteria;
-
-    if(productsArray != undefined){
-        currentProductsArray = productsArray;
-    }
-
-    currentProductsArray = sortProducts(currentSortCriteria, currentProductsArray);
+    sortProducts(sortCriteria, productsArray);
 }
 
 //Función que se ejecuta una vez que se haya lanzado el evento dfe
