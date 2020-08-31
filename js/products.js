@@ -92,36 +92,47 @@ function sortAndShowProducts(sortCriteria, productsArray){
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCTS_URL).then(function(resultObj) {
         if (resultObj.status === "ok" ) {
-            products = resultObj.data;   //Esto se usa para guardar toda la data del JSON en una variable "products"y
+            products = resultObj.data;   // Esto se usa para guardar toda la data del JSON en una variable "products"
             showProductsList(products);
         }
     });
 
+    // Evento onclick del boton sortAsc
     document.getElementById("sortAsc").addEventListener("click", function(){
         sortAndShowProducts(ORDER_ASC_BY_COST, products);
     });
 
+    // Evento onclick del boton sortDesc
     document.getElementById("sortDesc").addEventListener("click", function(){
         sortAndShowProducts(ORDER_DESC_BY_COST, products);
     });
 
+    // Evento onclick del boton sortByCount
     document.getElementById("sortByCount").addEventListener("click", function(){
         sortAndShowProducts(ORDER_DESC_BY_RELEV, products);
     });
 
-    document.getElementById("clearRangeFilter").addEventListener("click", function(){
+    // Evento onclick del boton Limpiar
+    document.getElementById("clearRangeFilter").addEventListener("click", function() {
+        // Limpiar todas las clases de previo marcado
         document.getElementById("rangeFilterCountMin").value = "";
         document.getElementById("rangeFilterCountMax").value = "";
+        document.getElementById("searchInput").value = "";
         document.getElementById("sortAsc").classList.remove("active");
         document.getElementById("sortAsc").classList.remove("focus");
         document.getElementById("sortDesc").classList.remove("active");
         document.getElementById("sortDesc").classList.remove("focus");
         document.getElementById("sortByCount").classList.remove("active");
         document.getElementById("sortByCount").classList.remove("focus");
+        document.getElementById("searchInput").classList.remove("active");
+        document.getElementById("searchInput").classList.remove("focus");
 
+        // Reiniciar valores de maxCount, minCount, y searchCriteria
         minCount = undefined;
         maxCount = undefined;
+        searchCriteria = undefined;
 
+        // Volvemos a mostrar la lista sin los filtros
         showProductsList(products);
     });
 
@@ -145,7 +156,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
         showProductsList(products);
     });
 
+    // Evento onclick del search input
     document.getElementById("searchInput").addEventListener('keyup', function(event) {
+        // Transformamos el valor del input a lowercase para que nuestra busqueda no sea case sensitive
         searchCriteria = event.target.value.toLowerCase();
         showProductsList(products);
     })
