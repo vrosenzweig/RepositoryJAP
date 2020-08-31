@@ -40,8 +40,10 @@ var getJSONData = function(url){
     });
 }
 
-function logIN() {
+function login() {
+  // Seteamos el valor de log en true para saber si el usuario esta logueado
   sessionStorage.setItem("log", true)
+  // Guardamos el mail del usuario para luego mostrarlo en nuestra aplicacion
   var user = document.getElementById("inputMail");
   sessionStorage.setItem("email", user.value);
 } 
@@ -51,16 +53,18 @@ function forzarlogIn() {
   var userEmail = sessionStorage.getItem("email");
   
   if (!logueo) { 
-      sessionStorage.setItem("log", false);
-      location.href="login.html";
+    sessionStorage.setItem("log", false);
+    location.href="login.html";
   }
-  if (userEmail){
+
+  if (userEmail) {
+    // Insertamos en el html el mail del usuario ingresado, previamente guardado en sessionStorage
     document.getElementById('usuarioIniciado').innerHTML = userEmail;
   }
 }
 
-function cerrarSesion() {
-
+function logout() {
+  // Limpiamos el sessionStorage y recargamos la pagina
   sessionStorage.clear();
   window.location.reload();
 }

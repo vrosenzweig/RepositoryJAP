@@ -27,7 +27,7 @@
         <div>
           <button type="button" class="py-2 d-none d-md-inline-block" id="usuarioIniciado" data-toggle="dropdown">Usuario</button>
           <ul class="dropdown-menu">
-            <button type="button" class="py-2 d-none d-md-inline-block" id="cierreSesion" data-toggle="dropdown" onclick="cerrarSesion()">Cerrar Sesión</button>
+            <button type="button" class="py-2 d-none d-md-inline-block" id="cierreSesion" data-toggle="dropdown" onclick="logout()">Cerrar Sesión</button>
           </ul>
         </div>
       </div>
@@ -60,6 +60,9 @@
         <div class="col-md-6"></div>
           <div class="col-md-6 col-sm-12 mb-1 container">
             <div class="row container p-0 m-0">
+              <div class="col">
+                <input type="search" id="searchInput" />
+              </div>
               <div class="col">
                 <p class="font-weight-normal text-right my-2">Precio</p>
               </div>

@@ -6,6 +6,7 @@ var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
 var products = undefined;
+var searchCriteria;
 
 function sortProducts(criteria, array){
     let result = [];
@@ -48,19 +49,20 @@ function sortProducts(criteria, array){
     return result;
 }
 
-function showProductsList(array){
+function showProductsList(array) {
     let contenido = "";
 
     for(let i = 0; i < array.length; i++){
         let product = array[i];
 
         if (((minCount == undefined) || (minCount != undefined && parseInt(product.cost) >= minCount)) &&
-        ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount))) {
+        ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount)) &&
+        (((typeof searchCriteria === 'undefined') || searchCriteria === "") || (product.name.toLowerCase().indexOf(searchCriteria) !== -1 || product.description.toLowerCase().indexOf(searchCriteria) !== -1))) {
             contenido += `
             <div class="list-group-item list-group-item-action">
                 <div class="row">
                     <div class="col-3">
-                        <img src="` + product.imgSrc + `" alt="` + product.desc + `" class="img-thumbnail">
+                        <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
                     </div>
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
@@ -120,13 +122,17 @@ document.addEventListener("DOMContentLoaded", function (e) {
         minCount = undefined;
         maxCount = undefined;
 
-        // Arreglar problema con filter cuando no hay valores
         showProductsList(products);
     });
 
     document.getElementById("rangeFilterCount").addEventListener("click", function(){
         minCount = document.getElementById("rangeFilterCountMin").value;
         maxCount = document.getElementById("rangeFilterCountMax").value;
+
+        // En caso de que minCount y maxCount no esten definidos o esten vacios, no ejecutar nada.
+        if ((typeof minCount === 'undefined' || minCount === "") || typeof maxCount === 'undefined' || maxCount === "") {
+            return;
+        }
 
         if (typeof minCount !== 'undefined' && minCount !== "" && parseInt(minCount) >= 0) {
             minCount = parseInt(minCount);
@@ -138,4 +144,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         showProductsList(products);
     });
+
+    document.getElementById("searchInput").addEventListener('keyup', function(event) {
+        searchCriteria = event.target.value.toLowerCase();
+        showProductsList(products);
+    })
 });
