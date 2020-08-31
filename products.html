@@ -22,12 +22,11 @@
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
          
-      <!-- Agrego botón de "Usuario iniciado" y despliegue "Cerrar Sesión" en todos los html donde esté la barra que redirige a las distintas páginas. -->
-
+        <!-- Agrego botón de "Usuario iniciado" y despliegue "Cerrar Sesión" en todos los html donde esté la barra que redirige a las distintas páginas. -->
         <div>
           <button type="button" class="py-2 d-none d-md-inline-block" id="usuarioIniciado" data-toggle="dropdown">Usuario</button>
           <ul class="dropdown-menu">
-            <button type="button" class="py-2 d-none d-md-inline-block" id="cierreSesion" data-toggle="dropdown" onclick="logout()">Cerrar Sesión</button>
+            <button type="button" class="logout" id="cierreSesion" data-toggle="dropdown" onclick="logout()">Cerrar Sesión</button>
           </ul>
         </div>
       </div>
@@ -38,7 +37,7 @@
           <p class="lead">Estos son los productos que ofrecemos.</p>
       </div>
     
-    <div class="container">
+    <div class="container justify-content-end">
       <div class="row">
         <div class="col text-right">
             <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
@@ -55,13 +54,12 @@
         </div>
     </div>
         
-    <div id="hola">
+    <div>
       <div class="row justify-content-end">
-        <div class="col-md-6"></div>
-          <div class="col-md-6 col-sm-12 mb-1 container">
-            <div class="row container p-0 m-0">
-              <div class="col">
-                <input type="search" id="searchInput" />
+          <div class="col-md-10 col-sm-12 mb-1 m-0 p-0">
+            <div class="row p-0 m-0">
+              <div class="col justify-content-start">
+                <input class="form-control" placeholder="Buscar"" type="search" id="searchInput" />
               </div>
               <div class="col">
                 <p class="font-weight-normal text-right my-2">Precio</p>
@@ -72,8 +70,8 @@
               <div class="col">
                 <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
               </div>
-              <div class="col-3 p-0">
-                <div class="btn-group" role="group">
+              <div class="col p-0 m-0">
+                <div class="btn-group m-0" role="group">
                   <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
                   <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
                 </div>
