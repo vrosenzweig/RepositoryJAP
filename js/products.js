@@ -52,11 +52,14 @@ function sortProducts(criteria, array){
 function showProductsList(array) {
     let contenido = "";
 
-    for(let i = 0; i < array.length; i++){
+    for (let i = 0; i < array.length; i++) {
         let product = array[i];
 
+        // Si minCount no esta definido, entrar en el if si el costo del producto es mayor al ingresado
         if (((minCount == undefined) || (minCount != undefined && parseInt(product.cost) >= minCount)) &&
+        // Si maxCount no esta definido, entrar en el if si el costo del producto es menor al ingresado
         ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount)) &&
+        // Si existe un criterio de busqueda, y coincide con el titulo o descripcion de cualquier producto, entrar en el if y mostrar el producto
         (((typeof searchCriteria === 'undefined') || searchCriteria === "") || (product.name.toLowerCase().indexOf(searchCriteria) !== -1 || product.description.toLowerCase().indexOf(searchCriteria) !== -1))) {
             contenido += `
             <div class="list-group-item list-group-item-action">
@@ -156,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         showProductsList(products);
     });
 
-    // Evento onclick del search input
+    // Evento keyup del search input
     document.getElementById("searchInput").addEventListener('keyup', function(event) {
         // Transformamos el valor del input a lowercase para que nuestra busqueda no sea case sensitive
         searchCriteria = event.target.value.toLowerCase();
