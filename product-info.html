@@ -15,6 +15,23 @@
   <link href="css/styles.css" rel="stylesheet">
 </head>
 
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
@@ -23,9 +40,9 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-       
-      <!-- Agrego botón de "Usuario iniciado" y despliegue "Cerrar Sesión" en todos los html donde esté la barra que redirige a las distintas páginas. -->
-
+      
+        <!-- Agrego botón de "Usuario iniciado" y despliegue "Cerrar Sesión" en todos los html donde esté la barra que redirige a las distintas páginas. -->
+        
       <div>
         <button type="button" class="py-2 d-none d-md-inline-block" id="usuarioIniciado" data-toggle="dropdown">Usuario</button>
         <ul class="dropdown-menu">
@@ -34,14 +51,69 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Descripción del producto</h2>
+        <p class="lead">Encontrarás aquí toda la información del producto seleccionado.</p>
+        <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea el producto
+        seleccionado previamente, siempre se visualizará el presente: <strong>Chevrolet Onix Joy</strong>.</p>
+      </div>
+        <h3 id="productName"></h3>
+        <hr class="my-3">
+        <dl>
+          <dt>Descripción</dt>
+            <dd>
+              <p id="productDesc"></p>
+            </dd>
+          <dt>Categoría</dt>
+            <dd>
+              <a href="category-info.html" id="productCategory"></a>
+            </dd>
+          <dt>Costo</dt>
+            <dd>
+              <p id="productCost"></p>
+            </dd>
+          <dt>Cantidad de vendidos</dt>
+            <dd>
+              <p id="productSoldCount"></p>
+            </dd>
+        </dl>
+        <dt>Imágenes ilustrativas</dt>
+      <div class="row text-center text-lg-left pt-2" id="productImages"></div>
+        <dl>
+          <dt>Comentarios</dt>
+            <dd>
+              <div id="comments-container"></div>
+            </dd><br>
+            <dd>
+            <dt>Agregar un nuevo comentario.</dt>
+            </dd><br>
+            <form action="https://vrosenzweig.github.io/RepositoryJAP/products-info.html">
+              <textarea type="text" rows="4" cols="50" style="width: 600px; height: 300px; resize: none; padding: 12px 20px; background-color: #f8f8f8" placeholder="Escribe aquí tu comentario"></textarea>
+              <br>
+              <label for="Stars">Puntúa el producto:</label>
+                 <select name="estrellas" id="stars" style="background-color: #f1f1f1; border: none; border-radius: 2px;">
+                  <option value="una">5</option>
+                  <option value="dos">4</option>
+                  <option value="tres">3</option>
+                  <option value="cuatro">2</option>
+                  <option value="cinco">1</option>
+                 </select>
+                  <br>
+                 <input type="submit" value="Submit">
+            </form>
+              <br>
+              <br>
+            <dt>Productos relacionados</dt>
+            <dd>
+              <div id="relatedProducts"></div>
+            </dd>
+        </dl>
+      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver listado de productos</a>
     </div>
-  </div>
+  </main>
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
@@ -63,6 +135,8 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+
+  <!-- Agrego el script de product-info.js para que pueda ejecutar el código correspondiente. -->
 </body>
 
 </html>

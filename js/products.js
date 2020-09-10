@@ -63,7 +63,7 @@ function showProductsList(array) {
         (((typeof searchCriteria === 'undefined') || searchCriteria === "") || (product.name.toLowerCase().indexOf(searchCriteria) !== -1 || product.description.toLowerCase().indexOf(searchCriteria) !== -1))) {
             contenido += `
             <div class="list-group-item list-group-item-action">
-                <div class="row">
+                <div onclick="redirigir()" class="row">
                     <div class="col-3">
                         <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
                     </div>
@@ -82,6 +82,10 @@ function showProductsList(array) {
         }
     }
     document.getElementById("productitos").innerHTML = contenido;
+}
+
+function redirigir() {
+    location.href="product-info.html";
 }
 
 
