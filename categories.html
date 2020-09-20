@@ -21,14 +21,15 @@
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-     
+          
         <!-- Agrego botón de "Usuario iniciado" y despliegue "Cerrar Sesión" en todos los html donde esté la barra que redirige a las distintas páginas. -->
 
         <div>
           <button type="button" class="py-2 d-none d-md-inline-block" id="usuarioIniciado" data-toggle="dropdown">Usuario</button>
           <ul class="dropdown-menu">
-            <button type="button" class="logout" id="cierreSesion" data-toggle="dropdown" onclick="logout()">Cerrar Sesión</button>
+            <li><a href="my-profile.html" class="py-2 d-none d-md-inline-block" style="margin-left: 20px;">Mi perfil</a></li>
+            <li><a href="cart.html" class="py-2 d-none d-md-inline-block" style="margin-left: 20px;">Mi carrito</a></li>
+            <li><button type="button" class="logout" id="cierreSesion" data-toggle="dropdown" onclick="logout()">Cerrar Sesión</button></li>
           </ul>
         </div>
       </div>
