@@ -40,40 +40,138 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        
+
       <!-- Agrego botón de "Usuario iniciado" y despliegue "Cerrar Sesión" en todos los html donde esté la barra que redirige a las distintas páginas. -->
 
       <div>
-        <button type="button" class="py-2 d-none d-md-inline-block" id="usuarioIniciado" data-toggle="dropdown">Usuario</button>
+        <button type="button" class="py-2 d-none d-md-inline-block" id="usuarioIniciado"
+          data-toggle="dropdown">Usuario</button>
         <ul class="dropdown-menu">
-          <li><a href="my-profile.html" class="py-2 d-none d-md-inline-block" style="margin-left: 20px;">Mi perfil</a></li>
+          <li><a href="my-profile.html" class="py-2 d-none d-md-inline-block" style="margin-left: 20px;">Mi perfil</a>
+          </li>
           <li><a href="cart.html" class="py-2 d-none d-md-inline-block" style="margin-left: 20px;">Mi carrito</a></li>
-          <li><button type="button" class="logout" id="cierreSesion" data-toggle="dropdown" onclick="logout()">Cerrar Sesión</button></li>
+          <li><button type="button" class="logout" id="cierreSesion" data-toggle="dropdown" onclick="logout()">Cerrar
+              Sesión</button></li>
         </ul>
       </div>
     </div>
   </nav>
-  <div class="container p-5">
+  <main role="main" class="pb-5">
+    <div class="text-center p-4">
+      <h2>Carrito de compras</h2>
+      <p class="lead">Artículos a comprar:</p>
+    </div>
+    <div class="container pb-5">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Costo</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Subtotal</th>
+          </tr>
+        </thead>
+        <tbody id="articlesWrapper">
+
+        </tbody>
+        <hr>
+
+
+      </table>
+      <hr>
+      <h3>Tipo de envío</h3>
+      <hr>
+      <div class="d-block my-3">
+        <div class="custom-control custom-radio">
+          <input id="premiumRadio" name="publicationType" type="radio" class="custom-control-input" checked=""
+            required="">
+          <label class="custom-control-label" for="premiumRadio">Premium de 2 a 5 días (15%)</label>
+        </div>
+
+        <div class="custom-control custom-radio">
+          <input id="expressRadio" name="publicationType" type="radio" class="custom-control-input" checked=""
+            required="">
+          <label class="custom-control-label" for="expressRadio">Express de 5 a 8 días (7%)</label>
+        </div>
+
+        <div class="custom-control custom-radio">
+          <input id="standardRadio" name="publicationType" type="radio" class="custom-control-input" checked=""
+            required="">
+          <label class="custom-control-label" for="standardRadio">Standard de 12 a 15 días (5%)</label>
+        </div>
+        <hr>
+        <h3>Dirección de envío</h3>
+
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <label for="zip">Calle</label>
+            <input type="text" class="form-control" id="productCostInput" placeholder="" required="">
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="state">Número</label>
+            <input type="text" class="form-control" id="productCostInput" placeholder="" required="">
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="zip">Esquina</label>
+            <input type="number" class="form-control" id="productCostInput" placeholder="" required="">
+            <div class="invalid-feedback">
+              El costo debe ser mayor que 0.
+            </div>
+          </div>
+        </div>
+
+        <hr>
+        <h3>Costos</h3>
+
+        <ul class="list-group mb-3">
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+              <h6 class="my-0">Subtotal</h6>
+              <small class="text-muted">Costo unitario del producto por cantidad</small>
+            </div>
+            <span class="text-muted" id="subTotal">-</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+              <h6 class="my-0">Costo de envío</h6>
+              <small class="text-muted">Según el tipo de envío</small>
+            </div>
+            <span class="text-muted" id="costoEnvio">-</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span>Total ($)</span>
+            <strong id="costoTotal">-</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </div>
+
+
+    <!--div class="container p-5">
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
       <h4 class="alert-heading">¡A trabajar! :)</h4>
       <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
       <hr>
       <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
     </div>
-  </div>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/dropzone.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/cart.js"></script>
+  </div-->
+
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      </div->
+
+      <script src="js/jquery-3.4.1.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/dropzone.js"></script>
+      <script src="js/init.js"></script>
+      <script src="js/cart.js"></script>
 </body>
 
 </html>
