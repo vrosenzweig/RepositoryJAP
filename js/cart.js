@@ -18,7 +18,7 @@ function showCart(array) {
               <td style="width:10%"><img width="100%" src="` + article.src + `"></td>
               <td>`+ article.name + `</td>
               <td>` + article.currency + " " + article.unitCost + `</td>
-              <td> <input id=`+ countId + ` type ="number" min="1" value=` + article.count + ` onchange="changeTotal(this,` + i + `)"> </td>
+              <td> <input id=`+ countId + ` type ="number" min="1" value=` + article.count + ` onchange="changeTotal(this,` + i + `)" required> </td>
               <td style="font-weight:bold">` + " $ " + article.count * article.unitCost + `<span></td>
             </tr>
           `
@@ -72,6 +72,34 @@ function MostrarTotales(){
   $("#total").text("Total ($) " + (costoTotal + costoEnvio));
   
 }
+
+function showMessage(array) {
+    
+    alert(array["msg"])
+    
+}
+
+var botonSubmit = document.getElementById("buttonsubmit");
+
+$("#cart-info").submit(function(e) {
+
+  return false
+
+})
+
+$("#buttonsubmit").click(function() {
+
+  getJSONData("https://japdevdep.github.io/ecommerce-api/cart/buy.json").then(function (resultObj) {
+
+    if (resultObj.status === "ok") {
+
+      console.log("asdasdasd")
+      messageArray = resultObj.data
+      showMessage(messageArray)
+    }
+})
+
+})
 
 
 //Función que se ejecuta una vez que se haya lanzado el evento de

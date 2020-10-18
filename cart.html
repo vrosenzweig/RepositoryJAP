@@ -59,6 +59,7 @@
   <main role="main" class="pb-5">
     <div class="text-center p-4">
       <h2>Carrito de compras</h2>
+      <form class="needs-validation" id="cart-info" method="get">
       <p class="lead">Artículos a comprar:</p>
     </div>
     <div class="container pb-5">
@@ -106,19 +107,16 @@
         <div class="row">
           <div class="col-md-3 mb-3">
             <label for="zip">Calle</label>
-            <input type="text" class="form-control" id="productCostInput" placeholder="" required="">
+            <input type="text" class="form-control" id="calle" placeholder="" required>
           </div>
           <div class="col-md-4 mb-3">
             <label for="state">Número</label>
-            <input type="text" class="form-control" id="productCostInput" placeholder="" required="">
+            <input type="text" class="form-control" id="numCalle" placeholder="" required>
           </div>
           <div class="col-md-3 mb-3">
             <label for="zip">Esquina</label>
-            <input type="number" class="form-control" id="productCostInput" placeholder="" required="">
-            <div class="invalid-feedback">
-              El costo debe ser mayor que 0.
+            <input type="number" class="form-control" id="esquina" placeholder="" required>
             </div>
-          </div>
         </div>
 
         <hr>
@@ -144,10 +142,43 @@
             <strong id="costoTotal">-</strong>
           </li>
         </ul>
+        <hr>
+        <h5 class="mb-3">Forma de Pago</h5>
+        <div class="row">
+          <button type="button" class="m-1 btn btn-link" data-toggle="modal" data-target="#contidionsModal" onclick="Payment();">Seleccionar...</button>
+        </div>
+        <hr class="mb-4">
+        <div id="buttonsubmit">
+          <input type="submit" value="Finalizar Compra">
+      </form>
+        
+        </div>
       </div>
     </div>
     </div>
 
+    <div class="modal fade" tabindex="-1" role="dialog" id="contidionsModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Métodos de Pago</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+                <div class="row">
+                    
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!--div class="container p-5">
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
