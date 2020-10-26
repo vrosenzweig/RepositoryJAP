@@ -166,13 +166,30 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+
           <div class="modal-body">
             <div class="container">
                 <div class="row">
-                    
+                  <div class="custom-control custom-radio">
+                    <input id="efectivo" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
+                    <label class="custom-control-label" for="efectivo">Efectivo</label>
+                  </div>
+                  <hr>
+                  <div class="custom-control custom-radio">
+                    <input id="debito" name="publicationType" type="radio" class="custom-control-input" required="">
+                    <label class="custom-control-label" for="debito">Débito</label>
+                  </div>
+                  <hr>
+                  <div class="custom-control custom-radio">
+                    <input id="credito" name="publicationType" type="radio" class="custom-control-input" required="">
+                    <label class="custom-control-label" for="credito">Crédito</label>
+                  </div>
+                  <hr>
+                    <hr>
                 </div>
             </div>
           </div>
+
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
           </div>

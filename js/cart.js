@@ -92,8 +92,7 @@ $("#buttonsubmit").click(function() {
   getJSONData("https://japdevdep.github.io/ecommerce-api/cart/buy.json").then(function (resultObj) {
 
     if (resultObj.status === "ok") {
-
-      console.log("asdasdasd")
+      
       messageArray = resultObj.data
       showMessage(messageArray)
     }
