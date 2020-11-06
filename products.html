@@ -56,25 +56,27 @@
     </div>
         
     <div>
-      <div class="row justify-content-end">
-          <div class="col-md-10 col-sm-12 mb-1 m-0 p-0">
+      <div class="row">
+          <div class="col col-sm-12 mb-1 m-0 p-0">
             <div class="row p-0 m-0">
               <div class="col justify-content-start">
                 <input class="form-control" placeholder="Buscar"" type="search" id="searchInput" />
               </div>
-              <div class="col">
-                <p class="font-weight-normal text-right my-2">Precio</p>
-              </div>
-              <div class="col">
-                <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
-              </div>
-              <div class="col">
-                <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
-              </div>
-              <div class="col p-0 m-0">
-                <div class="btn-group m-0" role="group">
-                  <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
-                  <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+              <div class="row justify-content-end p-0 m-0">
+                <div class="col">
+                  <p class="font-weight-normal text-right my-2">Precio</p>
+                </div>
+                <div class="col">
+                  <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+                </div>
+                <div class="col">
+                  <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+                </div>
+                <div class="col">
+                  <div class="btn-group m-0" role="group">
+                    <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
+                    <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -84,10 +86,13 @@
       
 
     </div>
-    <div class="row">
-      <div class="list-group" id="productitos">
+    <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row" id="productitos">
       </div>
+    </div>
   </div>
+</div>
   </div>
   </footer class="text-muted bg-light">
       <div class="container">

@@ -61,25 +61,20 @@ function showProductsList(array) {
         ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount)) &&
         // Si existe un criterio de busqueda, y coincide con el titulo o descripcion de cualquier producto, entrar en el if y mostrar el producto
         (((typeof searchCriteria === 'undefined') || searchCriteria === "") || (product.name.toLowerCase().indexOf(searchCriteria) !== -1 || product.description.toLowerCase().indexOf(searchCriteria) !== -1))) {
-            contenido += `
-            <div class="list-group-item list-group-item-action">
-                <div onclick="redirigir()" class="row">
-                    <div class="col-3">
-                        <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
-                    </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">`+ product.name +`</h4>
-                            <small class="text-muted">` + product.soldCount + ` artículos</small>
-                        </div>
-                        <div>` + product.description + `</div>
-                        <br>
-                        <div class="price">  `+ product.currency + ' ' + product.cost + ` </div>
-                    </div>
-                </div>
-            </div>
+            contenido +=`            
+            <div class="col-md-4">
+            <a href="product-info.html" class="card mb-4 shadow-sm custom-card" style="min-height: 460px">
+              <img class="bd-placeholder-img card-img-top"  src="` + product.imgSrc + `">
+              <h3 class="m-3">`+ product.name +`</h3>
+              <div class="card-body">
+                <p class="card-text">` + product.description + `</p>
+                <small class="card-text">` + product.soldCount + ` artículos</small>
+                <p class="card-text"> `+ product.currency + ' ' + product.cost + `</p>
+              </div>
+            </a>
+          </div>
             `
-        }
+        }        
     }
     document.getElementById("productitos").innerHTML = contenido;
 }

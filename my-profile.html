@@ -53,7 +53,55 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
+
+  <div class="container"></div>
+    <div class="container mt-5">
+    <div class="text-center p-4">
+      <h2>Mi Perfil</h2>
+    </div>
+    <form class="needs-validation" id="form-perfil" method="post">
+   <div class="row">
+          <div class="col-md-3 mb-3">
+            <label for="zip">Primer Nombre*</label>
+            <input type="text" class="form-control" id="nombre" placeholder="" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="state">Segundo Nombre</label>
+            <input type="text" class="form-control" id="segnombre" placeholder="" required>
+          </div>
+   </div>
+
+   <div class="row">
+    <div class="col-md-3 mb-3">
+      <label for="zip">Primer Apellido*</label>
+      <input type="text" class="form-control" id="apellido" placeholder="" size="20" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="state">Segundo Apellido</label>
+      <input type="text" class="form-control" id="segapellido" placeholder=""  size="20" required>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-md-3 mb-3">
+    <label for="zip">E-mail*</label>
+    <input type="text" class="form-control" id="email" placeholder="" size="20" required>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-3 mb-3">
+    <label for="zip">Teléfono de contacto*</label>
+    <input type="text" class="form-control" id="telefono" placeholder="" size="20" required>
+  </div>
+</div>
+<hr>
+<input type="submit" onclick="guardarCambios()" value="Guardar cambios">
+</div>
+</form>
+
+
+  <!--div class="container p-5">
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
       <h4 class="alert-heading">¡A trabajar! :)</h4>
       <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
@@ -72,7 +120,9 @@
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
-  </div>
+  </div-->
+
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
